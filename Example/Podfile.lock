@@ -40,7 +40,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  LZDependencyControlkit: e885dba50d6cbfece2b038f7e979246c2830665c
+  LZDependencyControlkit: 7d03e4291db1eb4faaa152af9e3c64aa3ab17083
   LZDependencyToolkit: da563e1fb2efa04a8c28aff06222bc3412e0ae10
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
 
