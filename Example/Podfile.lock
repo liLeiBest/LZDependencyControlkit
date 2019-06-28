@@ -1,0 +1,49 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - LZDependencyControlkit (0.1.0):
+    - LZDependencyToolkit
+  - LZDependencyToolkit (1.2.5.6):
+    - LZDependencyToolkit/Category (= 1.2.5.6)
+    - LZDependencyToolkit/Define (= 1.2.5.6)
+    - LZDependencyToolkit/Struct (= 1.2.5.6)
+  - LZDependencyToolkit/Category (1.2.5.6):
+    - MJRefresh
+  - LZDependencyToolkit/Define (1.2.5.6)
+  - LZDependencyToolkit/Struct (1.2.5.6):
+    - LZDependencyToolkit/Struct/AppUnit (= 1.2.5.6)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 1.2.5.6)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 1.2.5.6)
+    - LZDependencyToolkit/Struct/QuickUnit (= 1.2.5.6)
+  - LZDependencyToolkit/Struct/AppUnit (1.2.5.6)
+  - LZDependencyToolkit/Struct/CryptoUnit (1.2.5.6)
+  - LZDependencyToolkit/Struct/DeviceUnit (1.2.5.6)
+  - LZDependencyToolkit/Struct/QuickUnit (1.2.5.6)
+  - MJRefresh (3.2.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - LZDependencyControlkit (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+    - LZDependencyToolkit
+    - MJRefresh
+
+EXTERNAL SOURCES:
+  LZDependencyControlkit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  LZDependencyControlkit: e885dba50d6cbfece2b038f7e979246c2830665c
+  LZDependencyToolkit: da563e1fb2efa04a8c28aff06222bc3412e0ae10
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+
+PODFILE CHECKSUM: 1452a7c8b6684b2d141101702061bd6a7b021f41
+
+COCOAPODS: 1.7.0.rc.1

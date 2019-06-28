@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'LZDependencyControlkit_Example' do
+  pod 'LZDependencyControlkit', :path => '../'
+
+  target 'LZDependencyControlkit_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end

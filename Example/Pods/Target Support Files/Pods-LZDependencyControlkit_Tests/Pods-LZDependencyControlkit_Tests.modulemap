@@ -1,0 +1,6 @@
+framework module Pods_LZDependencyControlkit_Tests {
+  umbrella header "Pods-LZDependencyControlkit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
