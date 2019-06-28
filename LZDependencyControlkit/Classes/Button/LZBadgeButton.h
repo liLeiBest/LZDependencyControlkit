@@ -6,11 +6,11 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "LZNoHighlightButton.h"
 
 UIKIT_EXTERN NSString * const LZBADGE_NONENUMBER;
 
-@interface LZBadgeButton : UIButton
+@interface LZBadgeButton : LZNoHighlightButton
 
 /** 提醒数字 */
 @property (nonatomic, copy) NSString *badgeValue;
