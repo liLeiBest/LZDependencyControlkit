@@ -4,24 +4,26 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - LZDependencyControlkit (0.1.0):
+  - LZDependencyControlkit (0.1.1):
     - LZDependencyToolkit
-  - LZDependencyToolkit (1.2.5.6):
-    - LZDependencyToolkit/Category (= 1.2.5.6)
-    - LZDependencyToolkit/Define (= 1.2.5.6)
-    - LZDependencyToolkit/Struct (= 1.2.5.6)
-  - LZDependencyToolkit/Category (1.2.5.6):
+  - LZDependencyToolkit (1.2.6.3):
+    - LZDependencyToolkit/Category (= 1.2.6.3)
+    - LZDependencyToolkit/Define (= 1.2.6.3)
+    - LZDependencyToolkit/Object (= 1.2.6.3)
+    - LZDependencyToolkit/Struct (= 1.2.6.3)
+  - LZDependencyToolkit/Category (1.2.6.3):
     - MJRefresh
-  - LZDependencyToolkit/Define (1.2.5.6)
-  - LZDependencyToolkit/Struct (1.2.5.6):
-    - LZDependencyToolkit/Struct/AppUnit (= 1.2.5.6)
-    - LZDependencyToolkit/Struct/CryptoUnit (= 1.2.5.6)
-    - LZDependencyToolkit/Struct/DeviceUnit (= 1.2.5.6)
-    - LZDependencyToolkit/Struct/QuickUnit (= 1.2.5.6)
-  - LZDependencyToolkit/Struct/AppUnit (1.2.5.6)
-  - LZDependencyToolkit/Struct/CryptoUnit (1.2.5.6)
-  - LZDependencyToolkit/Struct/DeviceUnit (1.2.5.6)
-  - LZDependencyToolkit/Struct/QuickUnit (1.2.5.6)
+  - LZDependencyToolkit/Define (1.2.6.3)
+  - LZDependencyToolkit/Object (1.2.6.3)
+  - LZDependencyToolkit/Struct (1.2.6.3):
+    - LZDependencyToolkit/Struct/AppUnit (= 1.2.6.3)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 1.2.6.3)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 1.2.6.3)
+    - LZDependencyToolkit/Struct/QuickUnit (= 1.2.6.3)
+  - LZDependencyToolkit/Struct/AppUnit (1.2.6.3)
+  - LZDependencyToolkit/Struct/CryptoUnit (1.2.6.3)
+  - LZDependencyToolkit/Struct/DeviceUnit (1.2.6.3)
+  - LZDependencyToolkit/Struct/QuickUnit (1.2.6.3)
   - MJRefresh (3.2.0)
 
 DEPENDENCIES:
@@ -40,8 +42,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  LZDependencyControlkit: 7d03e4291db1eb4faaa152af9e3c64aa3ab17083
-  LZDependencyToolkit: da563e1fb2efa04a8c28aff06222bc3412e0ae10
+  LZDependencyControlkit: 77764aa6ca645785dd6329f6be4a274fffe7af0e
+  LZDependencyToolkit: 4e37e1a2fcde55d6a438370b49c196354acd3a70
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
 
 PODFILE CHECKSUM: 1452a7c8b6684b2d141101702061bd6a7b021f41

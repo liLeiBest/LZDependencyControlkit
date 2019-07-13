@@ -23,6 +23,7 @@
 #import "LZRoundCornerImageView.h"
 #import "LZCopyLabel.h"
 #import "LZLabel.h"
+#import "LZStrikethroughLabel.h"
 #import "LZVerticalAlignmentLabel.h"
 #import "LZDependencyControlkit.h"
 #import "LZTextView.h"

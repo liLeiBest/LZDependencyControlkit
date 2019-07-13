@@ -130,6 +130,22 @@ UIFont * font(CGFloat fontSize) {
 	return [UIFont systemFontOfSize:fontSize];
 }
 
+UIFont * boldFont(CGFloat fontSize) {
+	return [UIFont boldSystemFontOfSize:fontSize];
+}
+
+UIFont * italicFont(CGFloat fontSize) {
+	return [UIFont italicSystemFontOfSize:fontSize];
+}
+
+UIFont * fontWeight(CGFloat fontSize, UIFontWeight weight) {
+	if (@available(iOS 8.2, *)) {
+		return [UIFont systemFontOfSize:fontSize weight:weight];
+	} else {
+		return boldFont(fontSize);
+	}
+}
+
 UIFont * fontName(NSString *fontName, CGFloat fontSize) {
 	return [UIFont fontWithName:fontName size:fontSize];
 }
@@ -179,9 +195,16 @@ struct LZQuickUnit_type LZQuickUnit = {
 	
 	.installedFontNames = installedFontNames,
 	.font = font,
+	.boldFont = boldFont,
+	.italicFont = italicFont,
+	.fontWeight = fontWeight,
+	.fontName = fontName,
 	
 	.alert = alert,
+	
+	.notificationCenter = notificationCenter,
 	.notificationObserver = notificationObserver,
+	.notificationAdd = notificationAdd,
 	.notificationPost = notificationPost,
 	.notificationRemove = notificationRemove,
 };
