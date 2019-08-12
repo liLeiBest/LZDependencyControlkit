@@ -7,7 +7,6 @@
 //
 
 #import "LZViewController.h"
-#import <LZDependencyControlkit/LZDependencyControlkit.h>
 
 @interface LZViewController () {
 	

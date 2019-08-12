@@ -7,7 +7,5 @@ target 'LZDependencyControlkit_Example' do
 
   target 'LZDependencyControlkit_Tests' do
     inherit! :search_paths
-
-    pod 'FBSnapshotTestCase'
   end
 end

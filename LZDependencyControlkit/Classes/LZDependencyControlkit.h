@@ -13,4 +13,6 @@
 #import "LZImageView.h"
 #import "LZTextView.h"
 
+#import "LZCollectionViewFlowLayout.h"
+
 #endif /* LZDependencyControlkit_h */

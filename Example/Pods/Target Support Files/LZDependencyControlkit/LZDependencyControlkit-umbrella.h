@@ -19,6 +19,9 @@
 #import "LZNoHighlightButton.h"
 #import "LZRoundedCornersButton.h"
 #import "LZTopTitleButton.h"
+#import "LZCollectionViewAlignCellFlowLayout.h"
+#import "LZCollectionViewFlowLayout.h"
+#import "LZCollectionViewWaterfallFlowLayout.h"
 #import "LZImageView.h"
 #import "LZRoundCornerImageView.h"
 #import "LZCopyLabel.h"
@@ -26,6 +29,8 @@
 #import "LZStrikethroughLabel.h"
 #import "LZVerticalAlignmentLabel.h"
 #import "LZDependencyControlkit.h"
+#import "LZSegmentControl.h"
+#import "LZSegmentItemModel.h"
 #import "LZTextView.h"
 
 FOUNDATION_EXPORT double LZDependencyControlkitVersionNumber;
