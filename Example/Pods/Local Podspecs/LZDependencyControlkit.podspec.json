@@ -22,7 +22,10 @@
     "UIKit",
     "Foundation"
   ],
-  "source_files": "LZDependencyControlkit/Classes/**/*.{h,m}",
+  "source_files": [
+    "LZDependencyControlkit/Classes/**/*.{h,m}",
+    "LZDependencyControlkit/Classes/Segment/**/*.{xib}"
+  ],
   "public_header_files": "LZDependencyControlkit/Classes/**/*.h",
   "dependencies": {
     "LZDependencyToolkit": [

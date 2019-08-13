@@ -28,6 +28,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	[self configCellAlignFlowLayout];
+}
+
+// MARK: - Private
+- (void)configCellAlignFlowLayout {
+	
+	LZCollectionViewAlignCellFlowLayout *flowLayout = [[LZCollectionViewAlignCellFlowLayout alloc] init];
+	flowLayout.aligment = LZFlowLayoutCellAlignmentCenter;
+	flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+	self.collectionView.collectionViewLayout = flowLayout;
+	self.collectionView.alwaysBounceVertical = NO;
+	self.collectionView.alwaysBounceHorizontal = NO;
+}
+
+- (void)configWaterfallFlowLayout {
+	
 	LZCollectionViewWaterfallFlowLayout *flowLayout = [[LZCollectionViewWaterfallFlowLayout alloc] init];
 	flowLayout.delegate = self;
 	flowLayout.rowMargin = 10;
@@ -44,7 +60,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	
-	NSUInteger itemCount = 30;
+	NSUInteger itemCount = 10;
 	for (int i = 0; i < itemCount; i++) {
 		
 		CGFloat height = (arc4random()%100) + 20;
@@ -91,9 +107,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-	
-	CGFloat height = (arc4random()%100) + 20;
-	return CGSizeMake(height, 60);
+	return CGSizeMake([self.cellHeightArrM[indexPath.row] integerValue], 500);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -111,14 +125,14 @@
 	return [self.cellHeightArrM[indexPath.row] integerValue];
 }
 
-//- (CGSize)waterfallFlowLayout:(LZCollectionViewWaterfallFlowLayout *)waterfallFlowLayout
-//referenceSizeForHeaderInSection:(NSInteger)section {
-//	return CGSizeMake(0, 20);
-//}
-//
-//- (CGSize)waterfallFlowLayout:(LZCollectionViewWaterfallFlowLayout *)collectionViewLayout
-//referenceSizeForFooterInSection:(NSInteger)section {
-//	return CGSizeMake(0, 20);
-//}
+- (CGSize)waterfallFlowLayout:(LZCollectionViewWaterfallFlowLayout *)waterfallFlowLayout
+referenceSizeForHeaderInSection:(NSInteger)section {
+	return CGSizeMake(0, 20);
+}
+
+- (CGSize)waterfallFlowLayout:(LZCollectionViewWaterfallFlowLayout *)collectionViewLayout
+referenceSizeForFooterInSection:(NSInteger)section {
+	return CGSizeMake(0, 20);
+}
 
 @end

@@ -6,11 +6,15 @@
 //
 
 #import "LZSegmentControl.h"
+#import "UIView+LZExtension.h"
+#import "NSBundle+LZExtension.h"
+#import "LZSegmentItemCell.h"
 
 /** 最小宽度 */
 static CGFloat MinSegmentWidth = 80.0f;
 @interface LZSegmentControl()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
 	
+	IBOutlet UIView *containerView;
 	IBOutlet UICollectionView *itemCollectionView;
 	IBOutlet UIView *lineView;
 }
@@ -29,10 +33,28 @@ static CGFloat MinSegmentWidth = 80.0f;
 }
 
 // MARK: - Initialization
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+	if (self = [super initWithCoder:aDecoder]) {
+		[self reuseViewFromXib:@"LZSegmentControl" inBundle:nil];
+	}
+	return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+	if (self = [super initWithFrame:frame]) {
+		self = [self reuseViewFromXib:@"LZSegmentControl" inBundle:nil];
+	}
+	return self;
+}
+
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	
+	[self setupUI];
+}
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
-	
 	
 }
 
@@ -40,7 +62,7 @@ static CGFloat MinSegmentWidth = 80.0f;
 - (void)updateItems:(NSArray<LZSegmentItemModel *> *)items {
 	
 	[self.datasource removeAllObjects];
-	[self.datasource addObject:items];
+	[self.datasource addObjectsFromArray:items];
 	[self refreshSegmentList];
 }
 
@@ -57,8 +79,11 @@ static CGFloat MinSegmentWidth = 80.0f;
 // MARK: - Private
 - (void)setupUI {
 	
-	itemCollectionView.dataSource = self;
-	itemCollectionView.delegate = self;
+	containerView.backgroundColor = [UIColor orangeColor];
+	itemCollectionView.backgroundColor = [UIColor clearColor];
+	UINib *cellNib =
+	[NSBundle nib:LZSegmentItemCellIdentify inBundle:nil referenceClass:LZSegmentItemCellIdentify];
+	[itemCollectionView registerNib:cellNib forCellWithReuseIdentifier:LZSegmentItemCellIdentify];
 }
 
 - (void)refreshSegmentList {
@@ -82,16 +107,29 @@ static CGFloat MinSegmentWidth = 80.0f;
 	return self.datasource.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+				  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-	cell.contentView.backgroundColor = [UIColor colorWithRed:(arc4random()%255)/255.0 green:(arc4random()%255)/255.0 blue:(arc4random()%255)/255.0 alpha:1];
+	LZSegmentItemCell *cell =
+	[collectionView dequeueReusableCellWithReuseIdentifier:LZSegmentItemCellIdentify
+											  forIndexPath:indexPath];
+	cell.itemModel = [self.datasource objectAtIndex:indexPath.row];
+	cell.contentView.backgroundColor =
+	[UIColor colorWithRed:(arc4random()%255)/255.0
+					green:(arc4random()%255)/255.0
+					 blue:(arc4random()%255)/255.0
+					alpha:1];
 	return cell;
 }
 
 // MARK: <UICollectionViewDelegate>
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
+	LZSegmentItemModel *itemModel = [self.datasource objectAtIndex:indexPath.row];
+	if (self.itemDidSelectedCallback) {
+		self.itemDidSelectedCallback(itemModel);
+	}
 }
 
 // MARK: <UICollectionViewDelegateFlowLayout>

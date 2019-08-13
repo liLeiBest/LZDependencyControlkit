@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LZSegmentControl : UIView
 
+/** 选中回调 */
+@property (copy, nonatomic) void (^itemDidSelectedCallback)(LZSegmentItemModel *itemModel);
 
 //- (instancetype)initWithFrame:(CGRect)frame;
 - (void)updateItems:(NSArray<LZSegmentItemModel *> *)items;

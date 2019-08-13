@@ -11,6 +11,7 @@
 @interface LZViewController () {
 	
 	IBOutlet LZLoadingButton *loadingView;
+	IBOutlet LZSegmentControl *segmentControl;
 }
 
 @end
@@ -23,21 +24,25 @@
 	[self setupUI];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+// MARK: - UI Action
+- (IBAction)stopLoadingDidTouchDown:(id)sender {
 	
 	[loadingView animationFinish];
-	
 	[(LZLoadingButton *)self.navigationItem.rightBarButtonItem.customView animationFinish];
 }
 
-// MARK: - UI Action
 - (void)loadingSomething {
-	
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 // MARK: - Private
 - (void)setupUI {
+	
+	[self configLoadingButton];
+	[self configSegmentView];
+}
+
+- (void)configLoadingButton {
 	
 	NSDictionary *attributes = self.navigationController.navigationBar.titleTextAttributes;
 	attributes = attributes?:@{NSFontAttributeName : [UIFont systemFontOfSize:14],
@@ -57,6 +62,15 @@
 	loadingView.maskColor = [UIColor magentaColor];
 	loadingView.loadColor = [attributes objectForKey:NSForegroundColorAttributeName];;
 	[loadingView addTarget:self action:@selector(loadingSomething)];
+}
+
+- (void)configSegmentView {
+	
+	LZSegmentItemModel *item0 = [LZSegmentItemModel itemWithTitle:@"你好" atIndex:0];
+	LZSegmentItemModel *item1 = [LZSegmentItemModel itemWithTitle:@"我好" atIndex:1];
+	LZSegmentItemModel *item2 = [LZSegmentItemModel itemWithTitle:@"大家好" atIndex:2];
+	
+	[segmentControl updateItems:@[item0, item1, item2]];
 }
 
 @end

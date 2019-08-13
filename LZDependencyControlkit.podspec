@@ -13,7 +13,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target 	= '8.0'
   s.frameworks 				= 'UIKit', 'Foundation'
-  s.source_files 			= 'LZDependencyControlkit/Classes/**/*.{h,m}'
+  s.source_files 			= 'LZDependencyControlkit/Classes/**/*.{h,m}', 'LZDependencyControlkit/Classes/Segment/**/*.{xib}'
   s.public_header_files 	= 'LZDependencyControlkit/Classes/**/*.h'
   s.dependency 'LZDependencyToolkit'
   

@@ -9,4 +9,12 @@
 
 @implementation LZSegmentItemModel
 
+// MARK: - Public
++ (instancetype)itemWithTitle:(NSString *)title atIndex:(NSUInteger)index {
+	
+	LZSegmentItemModel *itemModel = [[LZSegmentItemModel alloc] init];
+	itemModel.title = title;
+	itemModel.index = index;
+	return itemModel;
+}
 @end
