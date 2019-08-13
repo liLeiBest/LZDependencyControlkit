@@ -30,6 +30,7 @@
 #import "LZVerticalAlignmentLabel.h"
 #import "LZDependencyControlkit.h"
 #import "LZSegmentControl.h"
+#import "LZSegmentItemCell.h"
 #import "LZSegmentItemModel.h"
 #import "LZTextView.h"
 
