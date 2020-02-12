@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eh3-52-GH9">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eh3-52-GH9">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,35 +20,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LIi-TL-noi">
-                                <rect key="frame" x="20" y="213" width="335" height="386"/>
+                                <rect key="frame" x="20" y="90" width="335" height="632"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试复制" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bP-kC-BLP" customClass="LZCopyLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="19"/>
                                         <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试复制测试复制测试复制测试复制测试复制测试复制测试复制测试复制测试复制测试复制测试复制" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePt-LJ-JhS" customClass="LZCopyLabel">
-                                        <rect key="frame" x="0.0" y="37" width="335" height="61"/>
+                                        <rect key="frame" x="0.0" y="39" width="335" height="61"/>
                                         <color key="backgroundColor" red="0.23173767797534245" green="0.4923747859589041" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8k-X4-c61">
-                                        <rect key="frame" x="0.0" y="118" width="335" height="30"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="120" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkp-zg-43g" customClass="LZLoadingButton">
-                                        <rect key="frame" x="0.0" y="168" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="174" width="335" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="h8w-WI-uxp"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwv-SD-F0m">
-                                        <rect key="frame" x="0.0" y="238" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="244" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="停止加载"/>
                                         <connections>
@@ -58,7 +55,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPD-Wu-Zbc">
-                                        <rect key="frame" x="0.0" y="288" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="294" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="CollectionView"/>
                                         <connections>
@@ -66,12 +63,72 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml7-OV-FG8" customClass="LZSegmentControl">
-                                        <rect key="frame" x="0.0" y="338" width="335" height="48"/>
+                                        <rect key="frame" x="0.0" y="344" width="335" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="Aj3-h7-MXm"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFF-ng-8RH">
+                                        <rect key="frame" x="0.0" y="412" width="335" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RSr-Su-0gS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="文字在上" image="arrow_down_icon">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="arrow_up_icon"/>
+                                        <connections>
+                                            <action selector="fixedBtnDidTouch:" destination="whP-gf-Uak" eventType="touchDown" id="IVx-Hs-P4g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf8-0u-m0X" customClass="LZFixedButton">
+                                        <rect key="frame" x="0.0" y="472" width="335" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="B4W-gh-Gwe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="文字在上" image="arrow_down_icon">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="arrow_up_icon"/>
+                                        <connections>
+                                            <action selector="fixedBtnDidTouch:" destination="whP-gf-Uak" eventType="touchDown" id="4iD-ry-NZj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd6-qV-wWT" customClass="LZFixedButton">
+                                        <rect key="frame" x="0.0" y="532" width="335" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="R54-qe-BnG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="文字在左" image="arrow_down_icon">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="arrow_up_icon"/>
+                                        <connections>
+                                            <action selector="fixedBtnDidTouch:" destination="whP-gf-Uak" eventType="touchDown" id="gNM-Iv-gkg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9b-1S-Unu" customClass="LZFixedButton">
+                                        <rect key="frame" x="0.0" y="592" width="335" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fZq-UX-US8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="文字在下" image="arrow_down_icon">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="arrow_up_icon"/>
+                                        <connections>
+                                            <action selector="fixedBtnDidTouch:" destination="whP-gf-Uak" eventType="touchDown" id="Bwi-AF-Ywc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -84,8 +141,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="wcF-iv-7rw"/>
                     <connections>
+                        <outlet property="bottomTitleBtn" destination="q9b-1S-Unu" id="Fxq-6r-I4v"/>
+                        <outlet property="leftTitleBtn" destination="vd6-qV-wWT" id="BbI-1w-BOu"/>
                         <outlet property="loadingView" destination="Pkp-zg-43g" id="Kkm-qv-3Kx"/>
                         <outlet property="segmentControl" destination="Ml7-OV-FG8" id="9fs-AQ-KEK"/>
+                        <outlet property="topTitleBtn" destination="Mf8-0u-m0X" id="Ktw-mo-iOQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,7 +222,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaE-pb-1wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2107" y="440"/>
+            <point key="canvasLocation" x="2063" y="432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QSD-HF-4ls">
@@ -183,4 +243,8 @@
             <point key="canvasLocation" x="304.80000000000001" y="432.26600985221677"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow_down_icon" width="15" height="15"/>
+        <image name="arrow_up_icon" width="13" height="6"/>
+    </resources>
 </document>

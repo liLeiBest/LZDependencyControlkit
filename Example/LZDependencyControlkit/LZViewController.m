@@ -12,6 +12,9 @@
 	
 	IBOutlet LZLoadingButton *loadingView;
 	IBOutlet LZSegmentControl *segmentControl;
+    IBOutlet LZFixedButton *topTitleBtn;
+    IBOutlet LZFixedButton *leftTitleBtn;
+    IBOutlet LZFixedButton *bottomTitleBtn;
 }
 
 @end
@@ -35,11 +38,16 @@
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
+- (IBAction)fixedBtnDidTouch:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
 // MARK: - Private
 - (void)setupUI {
 	
 	[self configLoadingButton];
 	[self configSegmentView];
+    [self configFixedBtn];
 }
 
 - (void)configLoadingButton {
@@ -70,7 +78,19 @@
 	LZSegmentItemModel *item1 = [LZSegmentItemModel itemWithTitle:@"我好" atIndex:1];
 	LZSegmentItemModel *item2 = [LZSegmentItemModel itemWithTitle:@"大家好" atIndex:2];
 	
-	[segmentControl updateItems:@[item0, item1, item2]];
+	[segmentControl updateItems:@[item0, item1, item2, item0, item1, item2]];
+}
+
+- (void)configFixedBtn {
+    
+    topTitleBtn.titlePosition = LZFixedButtonTitlePositionTop;
+    topTitleBtn.titleProportionInButton = 0.5;
+    
+    leftTitleBtn.titlePosition = LZFixedButtonTitlePositionLeft;
+    leftTitleBtn.titleProportionInButton = 0.55;
+    
+    bottomTitleBtn.titlePosition = LZFixedButtonTitlePositionBottom;
+    bottomTitleBtn.titleProportionInButton = 0.7;
 }
 
 @end
