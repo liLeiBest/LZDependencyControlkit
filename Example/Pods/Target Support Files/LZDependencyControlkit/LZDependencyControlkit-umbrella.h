@@ -12,7 +12,6 @@
 
 #import "LZBadgeButton.h"
 #import "LZBottomTitleButton.h"
-#import "LZBottomTitleButton1.h"
 #import "LZButton.h"
 #import "LZFixedButton.h"
 #import "LZLeftTitleButton.h"
