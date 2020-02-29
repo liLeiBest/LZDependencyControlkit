@@ -1,31 +1,31 @@
 PODS:
   - LZDependencyControlkit (0.1.6):
     - LZDependencyToolkit
-  - LZDependencyToolkit (1.5.1):
-    - LZDependencyToolkit/Category (= 1.5.1)
-    - LZDependencyToolkit/Define (= 1.5.1)
-    - LZDependencyToolkit/Object (= 1.5.1)
-    - LZDependencyToolkit/Struct (= 1.5.1)
-  - LZDependencyToolkit/Category (1.5.1):
+  - LZDependencyToolkit (1.5.2):
+    - LZDependencyToolkit/Category (= 1.5.2)
+    - LZDependencyToolkit/Define (= 1.5.2)
+    - LZDependencyToolkit/Object (= 1.5.2)
+    - LZDependencyToolkit/Struct (= 1.5.2)
+  - LZDependencyToolkit/Category (1.5.2):
     - MJRefresh
-  - LZDependencyToolkit/Define (1.5.1)
-  - LZDependencyToolkit/Object (1.5.1)
-  - LZDependencyToolkit/Struct (1.5.1):
-    - LZDependencyToolkit/Struct/AppUnit (= 1.5.1)
-    - LZDependencyToolkit/Struct/CryptoUnit (= 1.5.1)
-    - LZDependencyToolkit/Struct/DeviceUnit (= 1.5.1)
-    - LZDependencyToolkit/Struct/QuickUnit (= 1.5.1)
-  - LZDependencyToolkit/Struct/AppUnit (1.5.1)
-  - LZDependencyToolkit/Struct/CryptoUnit (1.5.1)
-  - LZDependencyToolkit/Struct/DeviceUnit (1.5.1)
-  - LZDependencyToolkit/Struct/QuickUnit (1.5.1)
+  - LZDependencyToolkit/Define (1.5.2)
+  - LZDependencyToolkit/Object (1.5.2)
+  - LZDependencyToolkit/Struct (1.5.2):
+    - LZDependencyToolkit/Struct/AppUnit (= 1.5.2)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 1.5.2)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 1.5.2)
+    - LZDependencyToolkit/Struct/QuickUnit (= 1.5.2)
+  - LZDependencyToolkit/Struct/AppUnit (1.5.2)
+  - LZDependencyToolkit/Struct/CryptoUnit (1.5.2)
+  - LZDependencyToolkit/Struct/DeviceUnit (1.5.2)
+  - LZDependencyToolkit/Struct/QuickUnit (1.5.2)
   - MJRefresh (3.3.1)
 
 DEPENDENCIES:
   - LZDependencyControlkit (from `../`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - LZDependencyToolkit
     - MJRefresh
 
@@ -35,9 +35,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LZDependencyControlkit: 15a30c2ba8560e021778370d91628d9d3b5d7e62
-  LZDependencyToolkit: 17f0b15c09e3a490ec50bebedcf58d8cb04b511a
+  LZDependencyToolkit: 2482a93444251d9700899be0a681789ae3661a54
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
 
-PODFILE CHECKSUM: e01e877dc2d681efefd332d3818e8eaa6b99b8da
+PODFILE CHECKSUM: 4d067d93723ae77dcf7b72c9e0292b2db249c209
 
 COCOAPODS: 1.8.4
