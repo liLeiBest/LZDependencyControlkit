@@ -1,5 +1,5 @@
 PODS:
-  - LZDependencyControlkit (0.1.5):
+  - LZDependencyControlkit (0.1.6):
     - LZDependencyToolkit
   - LZDependencyToolkit (1.5.1):
     - LZDependencyToolkit/Category (= 1.5.1)
@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LZDependencyControlkit: 1675874f7c534a6189c7359a3554c2176199b08a
+  LZDependencyControlkit: 15a30c2ba8560e021778370d91628d9d3b5d7e62
   LZDependencyToolkit: 17f0b15c09e3a490ec50bebedcf58d8cb04b511a
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
 
