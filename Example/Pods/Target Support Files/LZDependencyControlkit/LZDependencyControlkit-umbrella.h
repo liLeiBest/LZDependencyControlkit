@@ -14,6 +14,7 @@
 #import "LZBottomTitleButton.h"
 #import "LZButton.h"
 #import "LZFixedButton.h"
+#import "LZFloatButton.h"
 #import "LZLeftTitleButton.h"
 #import "LZLoadingButton.h"
 #import "LZNoHighlightButton.h"

@@ -131,17 +131,32 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GYh-Fh-dxa" customClass="LZFloatButton">
+                                <rect key="frame" x="345" y="648" width="30" height="100"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TNz-dz-M6k"/>
+                                    <constraint firstAttribute="width" constant="30" id="UJS-ma-NIY"/>
+                                </constraints>
+                                <state key="normal" title="我要测试"/>
+                                <connections>
+                                    <action selector="floatBtnDidTouch:" destination="whP-gf-Uak" eventType="touchDown" id="eID-pf-8Qq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LIi-TL-noi" secondAttribute="trailing" constant="20" id="ETe-eo-Hd8"/>
                             <constraint firstItem="LIi-TL-noi" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="gyh-yy-rXP"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="GYh-Fh-dxa" secondAttribute="bottom" constant="30" id="tCI-Ny-W1R"/>
                             <constraint firstItem="LIi-TL-noi" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" id="wxU-dt-h3x"/>
+                            <constraint firstAttribute="trailing" secondItem="GYh-Fh-dxa" secondAttribute="trailing" id="z3J-GT-caL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wcF-iv-7rw"/>
                     <connections>
                         <outlet property="bottomTitleBtn" destination="q9b-1S-Unu" id="Fxq-6r-I4v"/>
+                        <outlet property="floatBtn" destination="GYh-Fh-dxa" id="Q5K-OW-HVL"/>
                         <outlet property="leftTitleBtn" destination="vd6-qV-wWT" id="BbI-1w-BOu"/>
                         <outlet property="loadingView" destination="Pkp-zg-43g" id="Kkm-qv-3Kx"/>
                         <outlet property="segmentControl" destination="Ml7-OV-FG8" id="9fs-AQ-KEK"/>

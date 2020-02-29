@@ -9,11 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
+// 按钮文字的位置
 typedef NS_ENUM(NSUInteger, LZFixedButtonTitlePosition) {
-    LZFixedButtonTitlePositionTop,
-    LZFixedButtonTitlePositionLeft,
-    LZFixedButtonTitlePositionBottom,
+    LZFixedButtonTitlePositionTop, // 上
+    LZFixedButtonTitlePositionLeft, // 左
+    LZFixedButtonTitlePositionBottom, // 下
+    LZFixedButtonTitlePositionRight, // 右
 };
 
 @interface LZFixedButton : UIButton

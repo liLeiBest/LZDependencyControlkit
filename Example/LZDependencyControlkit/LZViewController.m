@@ -15,6 +15,7 @@
     IBOutlet LZFixedButton *topTitleBtn;
     IBOutlet LZFixedButton *leftTitleBtn;
     IBOutlet LZFixedButton *bottomTitleBtn;
+    IBOutlet LZFloatButton *floatBtn;
 }
 
 @end
@@ -38,6 +39,10 @@
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
+- (IBAction)floatBtnDidTouch:(id)sender {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
 - (IBAction)fixedBtnDidTouch:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
@@ -48,6 +53,12 @@
 	[self configLoadingButton];
 	[self configSegmentView];
     [self configFixedBtn];
+    [self configFloatBtn];
+}
+
+- (void)configFloatBtn {
+    
+    floatBtn.safeInsets = UIEdgeInsetsMake(88, 0, 34, 0);
 }
 
 - (void)configLoadingButton {

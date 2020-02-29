@@ -10,6 +10,7 @@
 
 #import "LZBadgeButton.h"
 #import "LZBottomTitleButton.h"
+#import "LZFloatButton.h"
 #import "LZFixedButton.h"
 #import "LZLeftTitleButton.h"
 #import "LZNoHighlightButton.h"
