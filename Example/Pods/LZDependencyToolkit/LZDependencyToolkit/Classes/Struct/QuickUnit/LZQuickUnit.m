@@ -93,24 +93,25 @@ UIFont * fontName(NSString *fontName, CGFloat fontSize) {
 }
 
 // MARK: Alert
-void alert(NSString *title, NSString *message, NSArray<UIAlertAction *> *actions) {
+void alert(UIViewController *target, NSString *title, NSString *message, NSArray<UIAlertAction *> *actions) {
 	
 	UIAlertController *alertCtr = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
 	for (UIAlertAction *action in actions) {
 		[alertCtr addAction:action];
 	}
-	[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertCtr animated:YES completion:nil];
+	[target presentViewController:alertCtr animated:YES completion:nil];
 }
 
-void sheet(NSString *title, NSString *message, NSArray<UIAlertAction *> *actions) {
+void sheet(UIViewController *target, NSString *title, NSString *message, NSArray<UIAlertAction *> *actions) {
     
     UIAlertController *sheetCtr = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     for (UIAlertAction *action in actions) {
         [sheetCtr addAction:action];
     }
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:sheetCtr animated:YES completion:nil];
+    [target presentViewController:sheetCtr animated:YES completion:nil];
 }
 
+// MARK: Notification
 NSNotificationCenter * notificationCenter(void) {
 	return [NSNotificationCenter defaultCenter];
 }
@@ -120,7 +121,11 @@ id <NSObject> notificationObserver(NSNotificationName name, void (^callBackHandl
 }
 
 void notificationAdd(id observer, SEL selector, NSNotificationName name) {
-	[notificationCenter() addObserver:observer selector:selector name:name object:nil];
+    @try {
+        [notificationCenter() addObserver:observer selector:selector name:name object:nil];
+    } @catch (NSException *exception) {
+    } @finally {
+    }
 }
 
 void notificationPost(NSNotificationName name, id anyObject, NSDictionary *userInfo) {
@@ -128,7 +133,11 @@ void notificationPost(NSNotificationName name, id anyObject, NSDictionary *userI
 }
 
 void notificationRemove(id observer, NSNotificationName name) {
-	[notificationCenter() removeObserver:observer name:name object:nil];
+    @try {
+        [notificationCenter() removeObserver:observer name:name object:nil];
+    } @catch (NSException *exception) {
+    } @finally {
+    }
 }
 
 /** 初始化结构体 */
@@ -146,6 +155,7 @@ struct LZQuickUnit_type LZQuickUnit = {
 	.fontName = fontName,
 	
 	.alert = alert,
+    .sheet = sheet,
 	
 	.notificationCenter = notificationCenter,
 	.notificationObserver = notificationObserver,

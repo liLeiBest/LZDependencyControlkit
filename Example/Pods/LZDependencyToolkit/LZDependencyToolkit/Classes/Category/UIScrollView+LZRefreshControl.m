@@ -22,7 +22,6 @@
 @implementation LZWeakRefreshObjectContainer
 
 - (instancetype)initWithWeakObject:(id)object {
-    
     if (self = [super init]) {
         _weakObject = object;
     }
@@ -33,6 +32,8 @@
 
 static char const * const kLZRefreshNoMoreDataTitle = "lz_refreshNoMoreDataTitle";
 static char const * const kLZRefreshTextAttributes = "lz_refreshTextAttributes";
+static char const * const kLZRefreshHeaderRefreshingCallback = "lz_refreshHeaderRefreshingCallback";
+static char const * const kLZRefreshFooterRefreshingCallback = "lz_refreshFooterRefreshingCallback";
 static NSDictionary *RefreshTextAttributes = nil;
 static NSString *RefreshNoMoreTitle = @"已经没有更多了";
 @implementation UIScrollView (LZRefreshControl)
@@ -57,6 +58,26 @@ static NSString *RefreshNoMoreTitle = @"已经没有更多了";
     LZ_setAssociatedObject(self, kLZRefreshTextAttributes, [[LZWeakRefreshObjectContainer alloc] initWithWeakObject:textAttributes]);
 }
 
+- (void (^)(void))headerRefreshingCallback {
+    
+    LZWeakRefreshObjectContainer *container = LZ_getAssociatedObject(self, kLZRefreshHeaderRefreshingCallback);
+    return container.weakObject;
+}
+
+- (void)setHeaderRefreshingCallback:(void (^)(void))headerRefreshingCallback {
+    LZ_setAssociatedObject(self, kLZRefreshHeaderRefreshingCallback, [[LZWeakRefreshObjectContainer alloc] initWithWeakObject:headerRefreshingCallback]);
+}
+
+- (void (^)(void))footerRefreshingCallback {
+    
+    LZWeakRefreshObjectContainer *container = LZ_getAssociatedObject(self, kLZRefreshFooterRefreshingCallback);
+    return container.weakObject;
+}
+
+- (void)setFooterRefreshingCallback:(void (^)(void))footerRefreshingCallback {
+    LZ_setAssociatedObject(self, kLZRefreshFooterRefreshingCallback, [[LZWeakRefreshObjectContainer alloc] initWithWeakObject:footerRefreshingCallback]);
+}
+
 + (void)configTextAttibutes:(NSDictionary *)attributes {
 	RefreshTextAttributes = attributes;
 }
@@ -78,7 +99,6 @@ static NSString *RefreshNoMoreTitle = @"已经没有更多了";
 }
 
 - (void)beginHeaderRefresh {
-	
 	if (self.mj_footer.state == MJRefreshStateNoMoreData) {
 		[self.mj_footer resetNoMoreData];
 	}
@@ -122,7 +142,6 @@ static NSString *RefreshNoMoreTitle = @"已经没有更多了";
 }
 
 - (void)setupHideFooterNoData {
-	
 	if ([self totalDataCount]) {
 		self.mj_footer.hidden = NO;
 	} else {
@@ -131,11 +150,13 @@ static NSString *RefreshNoMoreTitle = @"已经没有更多了";
 }
 
 - (void)headerWithRefreshingBlock:(LZRefreshingBlock)refreshingBlock {
-	
 	MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 		if (self.mj_footer.state == MJRefreshStateNoMoreData) {
 			[self.mj_footer resetNoMoreData];
 		}
+        if (self.headerRefreshingCallback) {
+            self.headerRefreshingCallback();
+        }
 		if (refreshingBlock) {
 			refreshingBlock();
 		}
@@ -157,6 +178,9 @@ static NSString *RefreshNoMoreTitle = @"已经没有更多了";
 		if (self.mj_footer.state == MJRefreshStateNoMoreData) {
 			[self.mj_footer resetNoMoreData];
 		}
+        if (self.headerRefreshingCallback) {
+            self.headerRefreshingCallback();
+        }
 	};
 	NSDictionary *textArrs = self.textAttributes ?: RefreshTextAttributes;
     if (nil != textArrs) {
@@ -168,35 +192,56 @@ static NSString *RefreshNoMoreTitle = @"已经没有更多了";
 }
 
 - (void)footerWithRefreshingBlock:(LZRefreshingBlock)refreshingBlock {
-	
-	MJRefreshAutoNormalFooter *footer =
-	[MJRefreshAutoNormalFooter footerWithRefreshingBlock:refreshingBlock];
-	[footer setTitle:@"" forState:MJRefreshStateIdle];
-    NSString *title = self.noMoreDataTitle ?: RefreshNoMoreTitle;
-	[footer setTitle:title forState:MJRefreshStateNoMoreData];
     
+	MJRefreshAutoNormalFooter *footer =
+    [MJRefreshAutoNormalFooter footerWithRefreshingBlock:refreshingBlock];
+    [footer setTitle:@"" forState:MJRefreshStateIdle];
     NSDictionary *textArrs = self.textAttributes ?: RefreshTextAttributes;
     if (nil != textArrs) {
         footer.stateLabel.textColor = textArrs[NSForegroundColorAttributeName];
     }
-	self.mj_footer = footer;
+    __weak typeof(footer) weakFooter = footer;
+    __weak typeof(self) weakSelf = self;
+    footer.refreshingBlock = ^{
+        if ([weakSelf totalDataCount]) {
+            
+            NSString *title = weakSelf.noMoreDataTitle ?: RefreshNoMoreTitle;
+            [weakFooter setTitle:title forState:MJRefreshStateNoMoreData];
+        } else {
+            [weakFooter setTitle:@"" forState:MJRefreshStateNoMoreData];
+        }
+        if (self.footerRefreshingCallback) {
+            self.footerRefreshingCallback();
+        }
+    };
+    self.mj_footer = footer;
 }
 
 - (void)footerWithRefreshingTarget:(id)target
 				  refreshingAction:(SEL)action {
 	
 	MJRefreshAutoNormalFooter *footer =
-	[MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:action];
-	[footer setTitle:@"" forState:MJRefreshStateIdle];
-    NSString *title = self.noMoreDataTitle ?: RefreshNoMoreTitle;
-	[footer setTitle:title forState:MJRefreshStateNoMoreData];
-	NSDictionary *textArrs = self.textAttributes ?: RefreshTextAttributes;
+    [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:action];
+    [footer setTitle:@"" forState:MJRefreshStateIdle];
+    NSDictionary *textArrs = self.textAttributes ?: RefreshTextAttributes;
     if (nil != textArrs) {
         footer.stateLabel.textColor = textArrs[NSForegroundColorAttributeName];
     }
-	self.mj_footer = footer;
+    __weak typeof(footer) weakFooter = footer;
+    footer.refreshingBlock = ^{
+        if ([self totalDataCount]) {
+            
+            NSString *title = self.noMoreDataTitle ?: RefreshNoMoreTitle;
+            [weakFooter setTitle:title forState:MJRefreshStateNoMoreData];
+        } else {
+            [weakFooter setTitle:@"" forState:MJRefreshStateNoMoreData];
+        }
+        if (self.footerRefreshingCallback) {
+            self.footerRefreshingCallback();
+        }
+    };
+    self.mj_footer = footer;
 }
-
 
 - (void)removeHeader {
 	[self.mj_header removeFromSuperview];

@@ -24,39 +24,7 @@
 }
 
 + (UIImage *)LZ_imageNamed:(id)name {
-    
-    if ([name isKindOfClass:[UIImage class]]) {
-        return (UIImage *)name;
-    }
-    
-    UIImage *image = nil;
-    if ([name isKindOfClass:[NSURL class]]) {
-        
-        NSData *imgData = [NSData dataWithContentsOfURL:(NSURL *)name];
-        image = [UIImage imageWithData:imgData];
-        return image;
-    } else if ([name isKindOfClass:[NSData class]]) {
-        
-        image = [UIImage imageWithData:(NSData *)name];
-        return image;
-    }
-    
-    if (![name isKindOfClass:[NSString class]]) {
-        return image;
-    }
-    
-    image = [UIImage LZ_imageNamed:name];
-    if (nil == image) {
-        
-        image = [UIImage imageWithContentsOfFile:name];;
-        if (nil == image) {
-            
-            NSURL *imgURL = [NSURL URLWithString:name];
-            NSData *imgData = [NSData dataWithContentsOfURL:imgURL];
-            image = [UIImage imageWithData:imgData];
-        }
-    }
-    return image;
+    return [self imageNamed:name allowNull:YES];
 }
 
 @end

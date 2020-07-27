@@ -11,8 +11,8 @@
 @implementation NSString (LZRegular)
 
 /** 判断是有效的 String */
-- (BOOL)isValideString {
-	return self && [self isKindOfClass:[NSString class]] && 0 < self.length;
+- (BOOL)isValidString {
+    return nil != self && [self isKindOfClass:[NSString class]] && 0 < self.length;
 }
 
 /** 判断是有效的 URL 地址 */
@@ -41,7 +41,7 @@
 /** 判断是有效的国内手机号 */
 - (BOOL)isValidMobilePhone {
     
-    NSString *mobilePhoneRegular = @"^0?(13|14|15|18|17)[0-9]{9}$";
+    NSString *mobilePhoneRegular = @"^0?(13|14|15|16|17|18|19)[0-9]{9}$";
     return [self verifyRegular:mobilePhoneRegular];
 }
 
@@ -134,6 +134,22 @@
                               toFigure:(NSInteger)toFigure {
     
     NSString *regular = [NSString stringWithFormat:@"^\\d{%ld,%ld}$", (long)fromFigure, (long)toFigure];
+    return [self verifyRegular:regular];
+}
+
+/** 验证浮点数只能输入最大或最小 N 位整数和小数，并且是否允许以 0 开头 */
+- (BOOL)validateFloatNumberWithIntegerFigure:(NSInteger)integerFigure
+                          integerMostOrLeast:(BOOL)integerMost
+                               decimalFigure:(NSInteger)decimalFigure
+                          decimalMostOrLeast:(BOOL)decimalMost
+                               beginWithZero:(BOOL)zero {
+    
+    NSInteger maxFirstNumber = YES == zero ? 0 : 1;
+    NSInteger maxInteger = integerFigure - 1;
+    NSInteger minInteger = YES == integerMost ? 0 : maxInteger;
+    NSInteger maxDecimal = decimalFigure;
+    NSInteger minDecimal = YES == decimalMost ? 0 : maxDecimal;
+    NSString *regular = [NSString stringWithFormat:@"^[%ld-9]\\d{%ld,%ld}+(\\.\\d{%ld,%ld})?$", maxFirstNumber, minInteger, maxInteger, minDecimal, maxDecimal];
     return [self verifyRegular:regular];
 }
 
@@ -234,6 +250,11 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regularExpression];;
     BOOL isValid = [predicate evaluateWithObject:self];
     return isValid;
+}
+
+// MARK: - Deprecated
+- (BOOL)isValideString {
+    return [self isValidString];
 }
 
 @end

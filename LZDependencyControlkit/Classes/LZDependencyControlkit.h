@@ -13,6 +13,7 @@
 #import "LZImageView.h"
 #import "LZSegmentControl.h"
 #import "LZTextView.h"
+#import "LZView.h"
 
 #import "LZCollectionViewFlowLayout.h"
 

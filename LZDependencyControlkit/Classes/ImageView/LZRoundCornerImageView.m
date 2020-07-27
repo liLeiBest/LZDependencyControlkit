@@ -10,7 +10,6 @@
 @implementation LZRoundCornerImageView
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-	
 	if (self = [super initWithCoder:aDecoder]) {
 		
 		self.layer.cornerRadius = self.frame.size.width > self.frame.size.height ? self.frame.size.height * 0.5 : self.frame.size.width * 0.5;
@@ -20,7 +19,6 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-	
 	if (self = [super initWithFrame:frame]) {
 		
 		self.layer.cornerRadius = self.frame.size.width > self.frame.size.height ? self.frame.size.height * 0.5 : self.frame.size.width * 0.5;

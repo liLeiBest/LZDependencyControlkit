@@ -1,25 +1,25 @@
 PODS:
   - LZDependencyControlkit (0.1.6):
     - LZDependencyToolkit
-  - LZDependencyToolkit (1.5.2):
-    - LZDependencyToolkit/Category (= 1.5.2)
-    - LZDependencyToolkit/Define (= 1.5.2)
-    - LZDependencyToolkit/Object (= 1.5.2)
-    - LZDependencyToolkit/Struct (= 1.5.2)
-  - LZDependencyToolkit/Category (1.5.2):
+  - LZDependencyToolkit (1.8.5):
+    - LZDependencyToolkit/Category (= 1.8.5)
+    - LZDependencyToolkit/Define (= 1.8.5)
+    - LZDependencyToolkit/Object (= 1.8.5)
+    - LZDependencyToolkit/Struct (= 1.8.5)
+  - LZDependencyToolkit/Category (1.8.5):
     - MJRefresh
-  - LZDependencyToolkit/Define (1.5.2)
-  - LZDependencyToolkit/Object (1.5.2)
-  - LZDependencyToolkit/Struct (1.5.2):
-    - LZDependencyToolkit/Struct/AppUnit (= 1.5.2)
-    - LZDependencyToolkit/Struct/CryptoUnit (= 1.5.2)
-    - LZDependencyToolkit/Struct/DeviceUnit (= 1.5.2)
-    - LZDependencyToolkit/Struct/QuickUnit (= 1.5.2)
-  - LZDependencyToolkit/Struct/AppUnit (1.5.2)
-  - LZDependencyToolkit/Struct/CryptoUnit (1.5.2)
-  - LZDependencyToolkit/Struct/DeviceUnit (1.5.2)
-  - LZDependencyToolkit/Struct/QuickUnit (1.5.2)
-  - MJRefresh (3.3.1)
+  - LZDependencyToolkit/Define (1.8.5)
+  - LZDependencyToolkit/Object (1.8.5)
+  - LZDependencyToolkit/Struct (1.8.5):
+    - LZDependencyToolkit/Struct/AppUnit (= 1.8.5)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 1.8.5)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 1.8.5)
+    - LZDependencyToolkit/Struct/QuickUnit (= 1.8.5)
+  - LZDependencyToolkit/Struct/AppUnit (1.8.5)
+  - LZDependencyToolkit/Struct/CryptoUnit (1.8.5)
+  - LZDependencyToolkit/Struct/DeviceUnit (1.8.5)
+  - LZDependencyToolkit/Struct/QuickUnit (1.8.5)
+  - MJRefresh (3.4.3)
 
 DEPENDENCIES:
   - LZDependencyControlkit (from `../`)
@@ -35,9 +35,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LZDependencyControlkit: 15a30c2ba8560e021778370d91628d9d3b5d7e62
-  LZDependencyToolkit: 2482a93444251d9700899be0a681789ae3661a54
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  LZDependencyToolkit: 17fab4c9494e7e1a77f08adfcba5672f4885a068
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
 
 PODFILE CHECKSUM: 4d067d93723ae77dcf7b72c9e0292b2db249c209
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.1

@@ -17,7 +17,7 @@
  
  @return BOOL
  */
-- (BOOL)isValideString;
+- (BOOL)isValidString;
 
 /**
  @author Lilei
@@ -180,6 +180,21 @@
 /**
  @author Lilei
  
+ @brief 验证浮点数只能输入最大或最小 N 位整数和小数，并且是否允许以 0 开头
+ 
+ @param integerFigure 最大整数的位数
+ @param decimalFigure 最大小数的位数
+ @return BOOL
+ */
+- (BOOL)validateFloatNumberWithIntegerFigure:(NSInteger)integerFigure
+                          integerMostOrLeast:(BOOL)integerMost
+                               decimalFigure:(NSInteger)decimalFigure
+                          decimalMostOrLeast:(BOOL)decimalMost
+                               beginWithZero:(BOOL)zero;
+
+/**
+ @author Lilei
+ 
  @brief 验证是否包含有 ^%&',;=?$/"等字符
  
  @return BOOL
@@ -256,5 +271,8 @@
  @return BOOL
  */
 - (BOOL)isContainOnlyLettersAndNumbersAndChineseCharacter:(NSString  * _Nullable __autoreleasing * _Nullable)resultString;
+
+// MARK: - Deprecated
+- (BOOL)isValideString DEPRECATED_MSG_ATTRIBUTE("请使用 isValidString 替代");
 
 @end

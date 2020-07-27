@@ -147,17 +147,14 @@
 
 @implementation UIView (LZViewController)
 
-/** 获取当前视图所在的控制器 */
 - (UIViewController *)viewController {
 	
 	UIResponder *responder = self;
 	while ((responder = [responder nextResponder])) {
-		
 		if ([responder isKindOfClass: [UIViewController class]]) {
 			return (UIViewController *)responder;
 		}
 	}
-	
 	return nil;
 }
 
@@ -199,7 +196,6 @@
 
 - (void)roundingCorners:(UIRectCorner)corners
 				 radius:(CGFloat)radius {
-	
 	[self roundedRect:self.bounds roundingCorners:corners radius:radius];
 }
 
@@ -232,11 +228,11 @@
     UITextInputMode *currentInputMode = [activeInputModes firstObject];
     NSString *currentLanguage = [currentInputMode primaryLanguage];
     
+    UITextPosition *position = nil;
     if ([currentLanguage isEqualToString:@"zh-Hans"]) {
-        
-        UITextRange *selectedRange = [inputView markedTextRange];
         //获取高亮部分
-        UITextPosition *position = [inputView positionFromPosition:selectedRange.start offset:0];
+        UITextRange *selectedRange = [inputView markedTextRange];
+        position = [inputView positionFromPosition:selectedRange.start offset:0];
         if (!position) { // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
             count = limitLength - textContent.length;
         } else { // 有高亮选择的字符串，则暂不对文字进行统计和限制
@@ -245,7 +241,7 @@
         count = limitLength - [inputView countWord:textContent];
     }
     
-    if (count < 0) {
+    if (count <= 0 && nil == position) {
         
         SEL selector = @selector(setText:);
         if ([self respondsToSelector:selector]) {
@@ -277,6 +273,19 @@
     }
     if (a==0 && l==0) return 0;
     return l+(float)ceilf((float)(a+b));
+}
+
+@end
+
+@implementation UIView (LZScreenShort)
+
+- (UIImage *)onScreenShort {
+    
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0);
+    BOOL success = [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return success ? image : nil;
 }
 
 @end

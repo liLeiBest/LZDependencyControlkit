@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eh3-52-GH9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Eh3-52-GH9">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -141,6 +141,7 @@
                                 <state key="normal" title="我要测试"/>
                                 <connections>
                                     <action selector="floatBtnDidTouch:" destination="whP-gf-Uak" eventType="touchDown" id="eID-pf-8Qq"/>
+                                    <segue destination="LR7-Wc-8t3" kind="show" id="f73-IM-WSN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,6 +239,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaE-pb-1wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063" y="432"/>
+        </scene>
+        <!--Dash Line View Controller-->
+        <scene sceneID="tja-Ee-8SU">
+            <objects>
+                <viewController id="LR7-Wc-8t3" customClass="LZDashLineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bzl-O9-zmj"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Vr-YW-GAW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ayf-2F-90c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSa-Ej-9DG" customClass="LZDashLineView">
+                                <rect key="frame" x="30" y="248.66666666666663" width="315" height="315"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rSa-Ej-9DG" secondAttribute="height" multiplier="1:1" id="fkV-gb-fy5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rSa-Ej-9DG" firstAttribute="centerY" secondItem="Ayf-2F-90c" secondAttribute="centerY" id="R8x-1z-G1l"/>
+                            <constraint firstAttribute="trailing" secondItem="rSa-Ej-9DG" secondAttribute="trailing" constant="30" id="iU2-uc-ToZ"/>
+                            <constraint firstItem="rSa-Ej-9DG" firstAttribute="leading" secondItem="Ayf-2F-90c" secondAttribute="leading" constant="30" id="ipR-Tq-CAT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DVH-z4-LQ6"/>
+                    <connections>
+                        <outlet property="dashLineView" destination="rSa-Ej-9DG" id="b6A-Ds-Ncz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWI-Hz-QN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="1224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QSD-HF-4ls">

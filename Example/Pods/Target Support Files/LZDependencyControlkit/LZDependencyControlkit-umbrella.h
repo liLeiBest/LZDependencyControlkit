@@ -34,6 +34,8 @@
 #import "LZSegmentItemCell.h"
 #import "LZSegmentItemModel.h"
 #import "LZTextView.h"
+#import "LZDashLineView.h"
+#import "LZView.h"
 
 FOUNDATION_EXPORT double LZDependencyControlkitVersionNumber;
 FOUNDATION_EXPORT const unsigned char LZDependencyControlkitVersionString[];
