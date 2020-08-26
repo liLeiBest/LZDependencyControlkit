@@ -56,7 +56,7 @@ referenceSizeForFooterInSection:(NSInteger)section;
 /** 每一列间距 */
 @property (nonatomic, assign) CGFloat columnMargin;
 /** 显示多少列 */
-@property (nonatomic, copy) NSNumber *columnsCount;
+@property (nonatomic, strong) NSNumber *columnsCount;
 /** 上左下右的边距 */
 @property (nonatomic, assign) UIEdgeInsets sectionInset;
 
