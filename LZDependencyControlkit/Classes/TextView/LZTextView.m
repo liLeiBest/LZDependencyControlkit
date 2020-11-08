@@ -71,7 +71,7 @@
 	
 	// 设置字体属性
 	NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-	attrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    attrs[NSFontAttributeName] = [self.font fontWithSize:self.font.pointSize - 1];
 	attrs[NSForegroundColorAttributeName] = self.placeHolderColor ? self.placeHolderColor : [UIColor lightGrayColor];
 	
 	// 绘画文本
