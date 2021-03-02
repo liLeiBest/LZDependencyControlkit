@@ -1,24 +1,24 @@
 PODS:
   - LZDependencyControlkit (0.1.8):
     - LZDependencyToolkit
-  - LZDependencyToolkit (2.0.0):
-    - LZDependencyToolkit/Category (= 2.0.0)
-    - LZDependencyToolkit/Define (= 2.0.0)
-    - LZDependencyToolkit/Object (= 2.0.0)
-    - LZDependencyToolkit/Struct (= 2.0.0)
-  - LZDependencyToolkit/Category (2.0.0):
+  - LZDependencyToolkit (2.0.4):
+    - LZDependencyToolkit/Category (= 2.0.4)
+    - LZDependencyToolkit/Define (= 2.0.4)
+    - LZDependencyToolkit/Object (= 2.0.4)
+    - LZDependencyToolkit/Struct (= 2.0.4)
+  - LZDependencyToolkit/Category (2.0.4):
     - MJRefresh
-  - LZDependencyToolkit/Define (2.0.0)
-  - LZDependencyToolkit/Object (2.0.0)
-  - LZDependencyToolkit/Struct (2.0.0):
-    - LZDependencyToolkit/Struct/AppUnit (= 2.0.0)
-    - LZDependencyToolkit/Struct/CryptoUnit (= 2.0.0)
-    - LZDependencyToolkit/Struct/DeviceUnit (= 2.0.0)
-    - LZDependencyToolkit/Struct/QuickUnit (= 2.0.0)
-  - LZDependencyToolkit/Struct/AppUnit (2.0.0)
-  - LZDependencyToolkit/Struct/CryptoUnit (2.0.0)
-  - LZDependencyToolkit/Struct/DeviceUnit (2.0.0)
-  - LZDependencyToolkit/Struct/QuickUnit (2.0.0)
+  - LZDependencyToolkit/Define (2.0.4)
+  - LZDependencyToolkit/Object (2.0.4)
+  - LZDependencyToolkit/Struct (2.0.4):
+    - LZDependencyToolkit/Struct/AppUnit (= 2.0.4)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 2.0.4)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 2.0.4)
+    - LZDependencyToolkit/Struct/QuickUnit (= 2.0.4)
+  - LZDependencyToolkit/Struct/AppUnit (2.0.4)
+  - LZDependencyToolkit/Struct/CryptoUnit (2.0.4)
+  - LZDependencyToolkit/Struct/DeviceUnit (2.0.4)
+  - LZDependencyToolkit/Struct/QuickUnit (2.0.4)
   - MJRefresh (3.5.0)
 
 DEPENDENCIES:
@@ -35,9 +35,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LZDependencyControlkit: 633815d4f755ae88718b1d2858b9f08a7f02d27c
-  LZDependencyToolkit: 09e4cf1181f2247db9f0e85500d49b40320454eb
+  LZDependencyToolkit: 249183f00555e7e4f26c66642e10f38d8a7007b8
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
 
 PODFILE CHECKSUM: 4d067d93723ae77dcf7b72c9e0292b2db249c209
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

@@ -6,6 +6,7 @@
 //
 
 #import "NSString+LZURL.h"
+#import "NSString+LZRegular.h"
 
 @implementation NSString (LZURL)
 
@@ -13,9 +14,13 @@
 - (NSString *)urlByAppendingParameter:(NSDictionary * _Nonnull)paraDict {
 	
 	NSMutableString *paraString = [NSMutableString string];
-	[paraDict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL * _Nonnull stop) {
-		[paraString appendFormat:@"%@=%@&", key, value];
-	}];
+    [paraDict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSObject *value, BOOL * _Nonnull stop) {
+        if ([value isKindOfClass:[NSString class]] && [(NSString *)value isValidString]) {
+            [paraString appendFormat:@"%@=%@&", key, value];
+        } else {
+            [paraString appendFormat:@"%@=%@&", key, value.description];
+        }
+    }];
 	if (0 < paraString.length) {
 		
 		NSString *paras = [paraString substringToIndex:paraString.length - 1];

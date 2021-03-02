@@ -933,16 +933,13 @@ BOOL _screen_retina(void) {
 BOOL _is_notch(void) {
     
     BOOL isNotch = NO;
-    if (NO == _is_iPhone()) {
-        return isNotch;
-    }
     if (@available(iOS 11.0, *)) {
         
         UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
         if (nil == mainWindow) {
             mainWindow = [UIApplication sharedApplication].keyWindow;
         }
-        if (mainWindow.safeAreaInsets.top > 0.0) {
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
             isNotch = YES;
         }
     }
