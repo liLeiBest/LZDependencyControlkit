@@ -1,6 +1,6 @@
 # LZDependencyControlkit
 
-[![CI Status](https://img.shields.io/travis/lilei_hapy@163.com/LZDependencyControlkit.svg?style=flat)](https://travis-ci.org/lilei_hapy@163.com/LZDependencyControlkit)
+[![CI Status](https://img.shields.io/travis/lilei0502@139.com/LZDependencyControlkit.svg?style=flat)](https://travis-ci.org/lilei0502@139.com/LZDependencyControlkit)
 [![Version](https://img.shields.io/cocoapods/v/LZDependencyControlkit.svg?style=flat)](https://cocoapods.org/pods/LZDependencyControlkit)
 [![License](https://img.shields.io/cocoapods/l/LZDependencyControlkit.svg?style=flat)](https://cocoapods.org/pods/LZDependencyControlkit)
 [![Platform](https://img.shields.io/cocoapods/p/LZDependencyControlkit.svg?style=flat)](https://cocoapods.org/pods/LZDependencyControlkit)
@@ -22,7 +22,7 @@ pod 'LZDependencyControlkit'
 
 ## Author
 
-lilei_hapy@163.com, lilei_hapy@163.com
+lilei, lilei0502@139.com
 
 ## License
 
