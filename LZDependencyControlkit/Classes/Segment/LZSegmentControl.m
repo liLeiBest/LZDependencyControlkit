@@ -6,8 +6,7 @@
 //
 
 #import "LZSegmentControl.h"
-#import "UIView+LZExtension.h"
-#import "NSBundle+LZExtension.h"
+#import "UIView+LZBundle.h"
 #import "LZSegmentItemCell.h"
 
 /** 最小宽度 */
@@ -81,8 +80,7 @@ static CGFloat MinSegmentWidth = 80.0f;
 	
 	containerView.backgroundColor = [UIColor orangeColor];
 	itemCollectionView.backgroundColor = [UIColor clearColor];
-	UINib *cellNib =
-	[NSBundle nib:LZSegmentItemCellIdentify inBundle:nil referenceClass:LZSegmentItemCellIdentify];
+    UINib *cellNib = [self nibFromXib:LZSegmentItemCellIdentify inBundle:nil];
 	[itemCollectionView registerNib:cellNib forCellWithReuseIdentifier:LZSegmentItemCellIdentify];
 }
 

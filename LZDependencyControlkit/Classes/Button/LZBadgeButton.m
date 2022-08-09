@@ -8,7 +8,7 @@
 
 #import "LZBadgeButton.h"
 #import "UIColor+LZExtension.h"
-#import "UIView+LZExtension.h"
+#import "UIView+LZFrame.h"
 #import "UIImage+LZInstance.h"
 
 NSString * const LZBADGE_NONENUMBER = @"badge_noneNumber";
