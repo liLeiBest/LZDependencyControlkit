@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZDependencyControlkit'
-  s.version          = '0.1.9'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of LZDependencyControlkit.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
