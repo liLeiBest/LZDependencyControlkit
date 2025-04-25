@@ -11,7 +11,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'lilei' => 'lilei0502@139.com' }
   s.source           = { :git => 'https://github.com/liLeiBest/LZDependencyControlkit.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target 	= '8.0'
+  s.ios.deployment_target 	= '13.0'
   s.frameworks 				= 'UIKit', 'Foundation'
   s.source_files 			= 'LZDependencyControlkit/Classes/**/*.{h,m}', 'LZDependencyControlkit/Classes/Segment/**/*.{xib}'
   s.public_header_files 	= 'LZDependencyControlkit/Classes/**/*.h'
